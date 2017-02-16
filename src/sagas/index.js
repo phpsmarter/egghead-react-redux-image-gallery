@@ -4,7 +4,8 @@ import {fetchImages} from '../api/flickr';
 export function* loadImages() {
   try {
     const images = yield call(fetchImages);
-    yield put({type: 'IMAGES_RECEIVED', images});，
+    console.log(images);
+    yield put({type: 'IMAGES_RECEIVED', images});
     yield put({type: 'SELECT_IMAGE', image: images[4]})//可以改变数组的键，看看大图的变化
   } catch (error) {
     yield put({type: 'LOAD_IMAGES_FAILURE', error})

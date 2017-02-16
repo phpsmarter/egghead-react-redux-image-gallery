@@ -4,6 +4,7 @@ import {bindActionCreators} from 'redux';//action的映射创建方法
 
 import GalleryImage from './GalleryImage';//大图组件
 import GalleryThumbs from './GalleryThumbs';//小图组件
+//import DevTools from './DevTools';
 
 import * as ImageGalleryActions from "../actions";//action
 
@@ -14,10 +15,12 @@ export class Gallery extends Component {
   }
   render() {
     const {images, selectImage, selectedImage} = this.props; //props是从redux返回的数据经过了映射处理，注意最下面的代码
+    console.log(images);
     return (
       <div className="image-gallery" hidden={!selectedImage}>
         <GalleryImage image={selectedImage} />
         <GalleryThumbs selectImage={selectImage} images={images} />
+
       </div>
     )
   }
