@@ -1,6 +1,7 @@
 import React, {Component, PropTypes} from 'react'
 import {connect} from 'react-redux';//connect方法
 import {bindActionCreators} from 'redux';//action的映射创建方法
+import { Button } from 'react-bootstrap';
 
 import GalleryImage from './GalleryImage';//大图组件
 import GalleryThumbs from './GalleryThumbs';//小图组件
@@ -20,6 +21,7 @@ export class Gallery extends Component {
       <div className="image-gallery" hidden={!selectedImage}>
         <GalleryImage image={selectedImage} />
         <GalleryThumbs selectImage={selectImage} images={images} />
+         <Button bsStyle="primary">Primary</Button>
 
       </div>
     )
